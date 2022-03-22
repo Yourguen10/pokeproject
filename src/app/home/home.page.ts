@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokeappService } from '../services/pokeapp.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  names = [{}, {}, {}, {}, {}, {}, {}, {}]
+ 
+  constructor(private pokeService: PokeappService) {}
 
-  constructor() {}
+  ionViewDidEnter(){
+    this.pokeService.getCharacter().then((newCharacter)=>{
+      this.names = newCharacter.name.items
+    })
+  }
+
+  
 
 }

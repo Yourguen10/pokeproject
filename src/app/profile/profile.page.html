@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{pokemon.name}}</ion-title>
+    <ion-icon slot="end" name="close" (click)="dismiss()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content class="ion-text-center">
+            <figure class="ion-text-center ion-padding">
+              <img [src]="pokemon.sprites?.front_default" alt="">
+            </figure>
+          </ion-card-content>
+          <ion-card-content class="ion-text-center">
+            <ion-card-title>
+              Habilidades
+            </ion-card-title>
+            <div *ngFor="let ability of pokemon.abilities">
+              {{ability.ability.name}}
+            </div>
+          </ion-card-content>
+          <ion-card-content class="ion-text-center">
+            <ion-card-title>
+              Altura
+            </ion-card-title>
+            <div>{{pokemon.height}}</div>
+          </ion-card-content>
+          <ion-card-content class="ion-text-center">
+            <ion-card-title>
+              Peso
+            </ion-card-title>
+            <div>{{pokemon.weight}}</div>
+          </ion-card-content>
+          <ion-card-content class="ion-text-center">
+            <ion-card-title>
+              Tipo
+            </ion-card-title>
+            <div *ngFor="let type of pokemon.types">
+              {{type.type.name}}
+            </div>
+          </ion-card-content>
+          <ion-card-content>
+            <ion-card-title class="ion-text-center">
+              Estadísticas
+            </ion-card-title>
+            <div *ngFor="let stat of pokemon.stats">
+              <ion-item>
+                <ion-label>
+                  {{stat.stat.name}}
+                </ion-label>
+                <ion-badge color="light">
+                  {{stat.base_stat}}
+                </ion-badge>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

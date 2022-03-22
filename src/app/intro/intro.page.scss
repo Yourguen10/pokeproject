@@ -1,0 +1,33 @@
+ion-content{
+  --background: red;
+  font-family: 'Times New Roman', Times, serif;
+}
+ion-slide{
+  background-color: white;
+  height: 100%;
+  max-width: 800px;
+}
+
+.swiper-slide{
+  display: block;
+  margin-bottom: 64px;
+  background-color: white;
+}
+
+ion-slide > ion-icon {
+  color: blue;
+  font-size: 64px;
+  margin: auto;
+}
+
+ion-slide > img {
+  max-height: 70%;
+  max-width: 70%;
+  margin: 70px 0;
+}
+
+ion-slide > h1,h2{
+  margin: auto;
+  color:black;
+}
+
